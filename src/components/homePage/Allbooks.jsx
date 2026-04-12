@@ -6,7 +6,7 @@ const booksPromise = fetch('/booksData.json')
 
 const Allbooks = () => {
     const booksData = use(booksPromise);
-    console.log(booksData);
+    // console.log(booksData);
 
     return (
         <div className='mt-25 w-11/12 max-w-325 mx-auto'>
