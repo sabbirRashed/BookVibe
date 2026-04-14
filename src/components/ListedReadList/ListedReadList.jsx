@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { BookContext } from '../../Context/BookProvider';
 import BookCard from '../ui/BookCard';
+import ListedBookCard from '../ui/ListedBookCard';
 
 const ListedReadList = () => {
     const { markedBooks, wishlist } = useContext(BookContext);
     return (
-        <div className='border border-green-500 mt-8 space-y-6'>
-            {markedBooks.map((book, ind) => <BookCard key={ind} book={book}></BookCard>)}
+        <div className='mt-8 space-y-6'>
+            {markedBooks.map((book, ind) => <ListedBookCard key={ind} book={book}></ListedBookCard>)}
         </div>
     );
 };
