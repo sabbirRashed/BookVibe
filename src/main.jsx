@@ -3,10 +3,13 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { RouterProvider } from 'react-router/dom'
 import { router } from './routes/Routes'
+import BookProvider from './Context/BookProvider'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <BookProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </BookProvider>
   </StrictMode>,
 )

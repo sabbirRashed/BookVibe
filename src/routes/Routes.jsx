@@ -9,20 +9,20 @@ import BookDetails from '../pages/bookDetails/BookDetails'
 export const router = createBrowserRouter([
     {
         path: '/',
-        Component: MainLayout,
+        element: <MainLayout></MainLayout>,
         children: [
             {
                 index: true,
-                Component: Homepage,
+                element: <Homepage></Homepage>,
             },
             {
                 path: '/Listed_books',
-                Component: Books
+                element: <Books></Books>
             },
             {
                 path: 'bookDetails/:bookId',
                 loader : () => fetch('/booksData.json'),
-                Component: BookDetails,
+                element: <BookDetails></BookDetails>
             }      
         ],
         errorElement: <ErrorPage></ErrorPage>

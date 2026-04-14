@@ -1,13 +1,19 @@
-import React from 'react';
+import { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { toast } from 'react-toastify';
+import { BookContext } from '../../Context/BookProvider';
+
+
 
 const BookDetails = () => {
     const { bookId: bookParamsId } = useParams();
     const booksData = useLoaderData();
+    const {markedBooks, setMarkedBooks, handleMarkAsRead, handleWishList} = useContext(BookContext);
+    // console.log(markedBooks);
+   
 
     const expectedBook = booksData.find((book) => book.bookId === Number(bookParamsId));
     const {
-        bookId,
         bookName,
         author,
         image,
@@ -15,14 +21,14 @@ const BookDetails = () => {
         totalPages,
         rating,
         category,
-        tags,
         publisher,
         yearOfPublishing
     } = expectedBook;
     // console.log(expectedBook);
 
+
     return (
-        <div className="card lg:card-side bg-base-100 gap-10 w-11/12  max-w-325 mx-auto mt-25 border-2 border-base-300">
+        <div className="card lg:card-side bg-base-100 gap-4 w-11/12  max-w-325 mx-auto mt-25 border-2 border-base-300">
             <figure className='flex-1 bg-base-300 m-6 rounded-lg
             '>
                 <img
@@ -64,8 +70,12 @@ const BookDetails = () => {
                     </p>
                 </div>
                 <div>
-                    <button className='btn mr-2'>Read</button>
-                    <button className='btn btn-accent'>Wishlist</button>
+                    <button
+                        onClick={() => { handleMarkAsRead(expectedBook) }}
+                        className='btn mr-2'>Mark as Read</button>
+                    <button 
+                    onClick={() => {handleWishList(expectedBook)}}
+                    className='btn btn-accent text-white'>Add to Wishlist</button>
                 </div>
 
             </div>
