@@ -6,7 +6,7 @@ const ListedWishList = ({sortingType}) => {
     const {  wishlist } = useContext(BookContext);
 
     if (wishlist.length === 0) {
-        return <div className='bg-base-300 py-20 rounded-2xl mt-8'>
+        return <div className='bg-base-300 py-20 rounded-2xl mt-8 border border-gray-600'>
             <h2 className='text-center text-2xl md:text-3xl font-bold'>No wish list data found</h2>
         </div>
     }

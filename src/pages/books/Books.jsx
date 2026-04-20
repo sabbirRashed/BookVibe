@@ -14,7 +14,7 @@ const Books = () => {
             <div className='flex justify-center items-center'>
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn m-1">Sort by :   ⬇️</div>
-                    <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                    <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm border border-gray-700">
                         <li
                             onClick={() => { setSortingType('pages') }}>
                             <a>Pages</a>

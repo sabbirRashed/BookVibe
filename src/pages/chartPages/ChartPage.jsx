@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { BookContext } from '../../Context/BookProvider';
 import { Bar, BarChart, Tooltip, XAxis, YAxis } from 'recharts';
 import { data } from 'react-router';
+import NoChartDataCard from '../../components/NoDataCard/NoChartDataCard';
 
 const ChartPage = () => {
     const { markedBooks } = useContext(BookContext);
@@ -40,6 +41,9 @@ const ChartPage = () => {
         );
     };
 
+    if(markedBooks.length === 0){
+        return <NoChartDataCard></NoChartDataCard>
+    }
 
     return (
 

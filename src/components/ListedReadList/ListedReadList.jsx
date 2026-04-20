@@ -7,7 +7,7 @@ const ListedReadList = ({ sortingType }) => {
     const { markedBooks } = useContext(BookContext);
 
     if (markedBooks.length === 0) {
-        return <div className='bg-base-300 py-20 rounded-2xl mt-8'>
+        return <div className='bg-base-300 py-20 rounded-2xl mt-8 border border-gray-700'>
             <h2 className='text-center text-2xl md:text-3xl font-bold'>No read list data found</h2>
         </div>
     }
