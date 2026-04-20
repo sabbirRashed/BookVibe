@@ -38,14 +38,14 @@ const BookDetails = () => {
             </figure>
             <div className="card-body flex-1">
                 <div className='border-b-2 border-b-base-300 pb-4'>
-                    <h2 className="card-title text-3xl md:text-4xl font-bold text-[#131313]">{bookName}</h2>
-                    <p className='text-base md:text-lg font-medium text-[#131313cb] mt-4'>By : {author}</p>
+                    <h2 className="card-title text-3xl md:text-4xl font-bold">{bookName}</h2>
+                    <p className='text-base md:text-lg font-medium  mt-4'>By : {author}</p>
                 </div>
-                <h3 className='text-base md:text-lg font-medium text-[#131313cb] border-b-2 border-b-base-300 pb-3'>{category}</h3>
+                <h3 className='text-base md:text-lg font-medium  border-b-2 border-b-base-300 pb-3'>{category}</h3>
                 <div className='border-b-2 border-b-base-300 bt-3 pb-4 space-y-4'>
-                    <p className='text-[#131313cb]'><span className='font-medium text-[#131313]'>Review : </span> {review}</p>
+                    <p className=''><span className='font-medium'>Review : </span> {review}</p>
                     <div className='flex gap-2 items-center'>
-                        <span className=' font-medium text-[#131313]'>Tag : </span>
+                        <span className=' font-medium '>Tag : </span>
                         {expectedBook.tags.map((tag, index) => {
                             return <div key={index}
                                 className='badge text-green-500 bg-green-100 font-medium'> #{tag}</div>
@@ -72,7 +72,7 @@ const BookDetails = () => {
                 <div>
                     <button
                         onClick={() => { handleMarkAsRead(expectedBook) }}
-                        className='btn mr-2'>Mark as Read</button>
+                        className='btn btn-neutral mr-2'>Mark as Read</button>
                     <button 
                     onClick={() => {handleWishList(expectedBook)}}
                     className='btn btn-accent text-white'>Add to Wishlist</button>
